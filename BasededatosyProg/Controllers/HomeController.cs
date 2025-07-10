@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 
 public class HomeController : Controller
 {
-    public IActionResult Login()
+    public IActionResult Index()
     {
         return View();
     }

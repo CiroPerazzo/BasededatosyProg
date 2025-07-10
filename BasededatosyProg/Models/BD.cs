@@ -36,8 +36,7 @@ namespace BasededatosyProg.Models
 {
     using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        string query = @"SELECT * FROM Integrante 
-                         WHERE (NombreUsuario = @Usuario OR Email = @Usuario) AND Contraseña = @Contraseña";
+        string query = @"SELECT * FROM Integrante  WHERE (NombreUsuario = @Usuario OR Email = @Usuario) AND Contraseña = @Contraseña";                         
         return connection.QueryFirstOrDefault<Integrante>(query, new { Usuario = usuario, Contraseña = contraseña });
     }
 }
