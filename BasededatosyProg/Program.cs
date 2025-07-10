@@ -1,5 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSessiom();
+builder.Services.AddSession();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

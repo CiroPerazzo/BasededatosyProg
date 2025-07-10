@@ -32,14 +32,15 @@ namespace BasededatosyProg.Models
             }
         }
 
-        public static bool Login(string usuario, string contrasena)
-        {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
-            {
-                string query = "SELECT COUNT(1) FROM Integrante WHERE Usuario = @Usuario AND Contrasena = @Contrasena";
-                int count = connection.ExecuteScalar<int>(query, new { Usuario = usuario, Contrasena = contrasena });
-                return count > 0;
-            }
-        }
+     public static Integrante Login(string usuario, string contraseña)
+{
+    using (SqlConnection connection = new SqlConnection(_connectionString))
+    {
+        string query = @"SELECT * FROM Integrante 
+                         WHERE (NombreUsuario = @Usuario OR Email = @Usuario) AND Contraseña = @Contraseña";
+        return connection.QueryFirstOrDefault<Integrante>(query, new { Usuario = usuario, Contraseña = contraseña });
+    }
+}
+
     }
 }

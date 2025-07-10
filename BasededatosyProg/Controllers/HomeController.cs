@@ -2,40 +2,33 @@ using Microsoft.AspNetCore.Mvc;
 using BasededatosyProg.Models;
 using Microsoft.AspNetCore.Http;
 
-public class LoginController : Controller
+public class HomeController : Controller
 {
-    [HttpGet]
-    public IActionResult Index()
+    public IActionResult Login()
     {
-        return View(); // Muestra el formulario de login
+        return View();
     }
 
     [HttpPost]
-    public IActionResult Index(string email, string password)
+    public IActionResult Login(string usuario, string contraseña)
     {
-        var user = BD.Login(email, password);
-        if (user != null)
+        Integrante integrante = BD.Login(usuario, contraseña);
+        if (integrante != null)
         {
-            // Guardamos en sesión el usuario serializado
-            HttpContext.Session.SetString("usuario", Objeto.ObjectToString(user));
-            return RedirectToAction("Perfil", "Login");
+            HttpContext.Session.SetString("usuario", Objeto.ObjectToString(integrante));
+            return RedirectToAction("Perfil");
         }
-        ViewBag.Error = "Credenciales incorrectas";
+        ViewBag.Mensaje = "Usuario o contraseña incorrectos.";
         return View();
     }
 
     public IActionResult Perfil()
     {
-        var userString = HttpContext.Session.GetString("usuario");
-        if (string.IsNullOrEmpty(userString)) return RedirectToAction("Index");
-        
-        var user = Objeto.StringToObject<Integrante>(userString);
-        return View(user);
-    }
+        var data = HttpContext.Session.GetString("usuario");
+        if (data == null) return RedirectToAction("Login");
 
-    public IActionResult Logout()
-    {
-        HttpContext.Session.Clear();
-        return RedirectToAction("Index");
+        Integrante integrante = Objeto.StringToObject<Integrante>(data);
+        return View(integrante);
     }
 }
+
