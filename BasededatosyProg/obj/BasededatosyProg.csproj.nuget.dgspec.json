@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Tp base de datos y prog\\BasededatosyProg\\BasededatosyProg.csproj": {}
+    "C:\\Users\\49122259\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj": {}
   },
   "projects": {
-    "Z:\\Tp base de datos y prog\\BasededatosyProg\\BasededatosyProg.csproj": {
+    "C:\\Users\\49122259\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Tp base de datos y prog\\BasededatosyProg\\BasededatosyProg.csproj",
+        "projectUniqueName": "C:\\Users\\49122259\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj",
         "projectName": "BasededatosyProg",
-        "projectPath": "Z:\\Tp base de datos y prog\\BasededatosyProg\\BasededatosyProg.csproj",
+        "projectPath": "C:\\Users\\49122259\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj",
         "packagesPath": "C:\\Users\\49122259\\.nuget\\packages\\",
-        "outputPath": "Z:\\Tp base de datos y prog\\BasededatosyProg\\obj\\",
+        "outputPath": "C:\\Users\\49122259\\BasededatosyProg\\BasededatosyProg\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -53,9 +53,17 @@
               "target": "Package",
               "version": "[2.1.66, )"
             },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[6.0.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [

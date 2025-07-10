@@ -1,4 +1,5 @@
 namespace BasededatosyProg.Models;
+using Newtonsoft.Json;
 
 public class ErrorViewModel
 {

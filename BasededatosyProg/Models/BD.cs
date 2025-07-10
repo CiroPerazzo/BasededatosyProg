@@ -1,8 +1,45 @@
 using Microsoft.Data.SqlClient;
 using Dapper;
-namespace BasededatosyProg.Models;
-public class conexion{
+using System.Collections.Generic;
+using System.Linq;
 
-private static string _connectionString = @"Server=localhost;
-DataBase=Integrantes;Integrated Security=True;TrustServerCertificate=True;";
+namespace BasededatosyProg.Models
+{
+    public class BD
+    {  
+        private static string _connectionString = @"Server=localhost;
+        DataBase=Integrantes;Integrated Security=True;TrustServerCertificate=True;";
+
+        public List<Integrante> LevantarIntegrante()
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM Integrante";
+                return connection.Query<Integrante>(query).ToList();
+            }
+        }
+
+        public static List<Integrante> LevantarIntegrantesPorNombre(string nombre)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string storedProcedure = "TraerIntegrantesPorNombre";
+                return connection.Query<Integrante>(
+                    storedProcedure,
+                    new { Letra = nombre },
+                    commandType: System.Data.CommandType.StoredProcedure
+                ).ToList();
+            }
+        }
+
+        public static bool Login(string usuario, string contrasena)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT COUNT(1) FROM Integrante WHERE Usuario = @Usuario AND Contrasena = @Contrasena";
+                int count = connection.ExecuteScalar<int>(query, new { Usuario = usuario, Contrasena = contrasena });
+                return count > 0;
+            }
+        }
+    }
 }

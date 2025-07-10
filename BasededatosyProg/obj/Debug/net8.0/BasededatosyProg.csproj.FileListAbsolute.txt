@@ -1,0 +1,9 @@
+C:\Users\49122259\BasededatosyProg\BasededatosyProg\obj\Debug\net8.0\BasededatosyProg.csproj.AssemblyReference.cache
+C:\Users\49122259\BasededatosyProg\BasededatosyProg\obj\Debug\net8.0\BasededatosyProg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\49122259\BasededatosyProg\BasededatosyProg\obj\Debug\net8.0\BasededatosyProg.AssemblyInfoInputs.cache
+C:\Users\49122259\BasededatosyProg\BasededatosyProg\obj\Debug\net8.0\BasededatosyProg.AssemblyInfo.cs
+C:\Users\49122259\BasededatosyProg\BasededatosyProg\obj\Debug\net8.0\BasededatosyProg.csproj.CoreCompileInputs.cache
+C:\Users\49122259\BasededatosyProg\BasededatosyProg\obj\Debug\net8.0\BasededatosyProg.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\49122259\BasededatosyProg\BasededatosyProg\obj\Debug\net8.0\BasededatosyProg.RazorAssemblyInfo.cache
+C:\Users\49122259\BasededatosyProg\BasededatosyProg\obj\Debug\net8.0\BasededatosyProg.RazorAssemblyInfo.cs
+C:\Users\49122259\BasededatosyProg\BasededatosyProg\obj\Debug\net8.0\BasededatosyProg.sourcelink.json

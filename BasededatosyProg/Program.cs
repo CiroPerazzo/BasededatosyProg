@@ -1,7 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSessiom();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -25,3 +27,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+app.UseSession();
