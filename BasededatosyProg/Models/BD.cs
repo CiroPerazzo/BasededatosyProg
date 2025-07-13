@@ -33,13 +33,13 @@ namespace BasededatosyProg.Models
         }
 
      public static Integrante Login(string usuario, string contraseña)
-{
-    using (SqlConnection connection = new SqlConnection(_connectionString))
-    {
-        string query = @"SELECT * FROM Integrante  WHERE (NombreUsuario = @Usuario OR Email = @Usuario) AND Contraseña = @Contraseña";                         
-        return connection.QueryFirstOrDefault<Integrante>(query, new { Usuario = usuario, Contraseña = contraseña });
-    }
-}
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT * FROM Integrante  WHERE (NombreUsuario = @Usuario OR Email = @Usuario) AND Contraseña = @Contraseña";                         
+                return connection.QueryFirstOrDefault<Integrante>(query, new { Usuario = usuario, Contraseña = contraseña });
+            }
+        }
 
     }
 }

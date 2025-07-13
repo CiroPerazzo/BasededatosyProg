@@ -24,10 +24,10 @@ public class HomeController : Controller
 
     public IActionResult Perfil()
     {
-        var data = HttpContext.Session.GetString("usuario");
-        if (data == null) return RedirectToAction("Login");
 
-        Integrante integrante = Objeto.StringToObject<Integrante>(data);
+        if (HttpContext.Session.GetString("usuario") == null) return RedirectToAction("Login");
+
+        Integrante integrante = Objeto.StringToObject<Integrante>(HttpContext.Session.GetString("usuario"));
         return View(integrante);
     }
 }
