@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Downloads\\TP05\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj": {}
+    "C:\\Users\\cirop\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Downloads\\TP05\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj": {
+    "C:\\Users\\cirop\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Downloads\\TP05\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj",
+        "projectUniqueName": "C:\\Users\\cirop\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj",
         "projectName": "BasededatosyProg",
-        "projectPath": "C:\\Users\\Usuario\\Downloads\\TP05\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Downloads\\TP05\\BasededatosyProg\\BasededatosyProg\\obj\\",
+        "projectPath": "C:\\Users\\cirop\\BasededatosyProg\\BasededatosyProg\\BasededatosyProg.csproj",
+        "packagesPath": "C:\\Users\\cirop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cirop\\BasededatosyProg\\BasededatosyProg\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\cirop\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -77,19 +75,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.14, 8.0.14]"
+              "version": "[8.0.16, 8.0.16]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[8.0.14, 8.0.14]"
+              "version": "[8.0.16, 8.0.16]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.14, 8.0.14]"
+              "version": "[8.0.16, 8.0.16]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.14, 8.0.14]"
+              "version": "[8.0.16, 8.0.16]"
             }
           ],
           "frameworkReferences": {
@@ -100,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
