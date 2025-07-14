@@ -10,6 +10,18 @@ namespace BasededatosyProg.Models
         private static string _connectionString = @"Server=localhost;
         DataBase=Integrantes;Integrated Security=True;TrustServerCertificate=True;";
 
+        public static Integrante Login(string usuario, string contraseña)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT * FROM Integrante WHERE NombreUsuario = @Usuario AND Contraseña = @Contraseña";
+                return connection.QueryFirstOrDefault<Integrante>(
+                    query,
+                    new { Usuario = usuario, Contraseña = contraseña }
+                );
+            }
+        }
+
         public List<Integrante> LevantarIntegrante()
         {
             using(SqlConnection connection = new SqlConnection(_connectionString))
@@ -31,15 +43,5 @@ namespace BasededatosyProg.Models
                 ).ToList();
             }
         }
-
-     public static Integrante Login(string usuario, string contraseña)
-        {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
-            {
-                string query = @"SELECT * FROM Integrante  WHERE (NombreUsuario = @Usuario OR Email = @Usuario) AND Contraseña = @Contraseña";                         
-                return connection.QueryFirstOrDefault<Integrante>(query, new { Usuario = usuario, Contraseña = contraseña });
-            }
-        }
-
     }
 }

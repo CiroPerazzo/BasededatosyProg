@@ -19,6 +19,7 @@ public class HomeController : Controller
             return RedirectToAction("Perfil");
         }
         ViewBag.Mensaje = "Usuario o contraseña incorrectos.";
+        Console.WriteLine(integrante != null ? "Login exitoso" : "Login fallido");
         return View();
     }
 
