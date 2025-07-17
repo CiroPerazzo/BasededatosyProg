@@ -1,35 +1,51 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using BasededatosyProg.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
+using Dapper;
 
-public class HomeController : Controller
+namespace BasededatosyProg.Controllers
 {
-    public IActionResult Index()
+    public class HomeController : Controller
     {
-        return View();
-    }
-
-    [HttpPost]
-    public IActionResult Login(string usuario, string contraseña)
-    {
-        Integrante integrante = BD.Login(usuario, contraseña);
-        if (integrante != null)
+        private readonly ILogger<HomeController> _logger;
+        public HomeController(ILogger<HomeController> logger)
         {
-            HttpContext.Session.SetString("usuario", Objeto.ObjectToString(integrante));
-            return RedirectToAction("Perfil");
+            _logger = logger;
         }
-        ViewBag.Mensaje = "Usuario o contraseña incorrectos.";
-        Console.WriteLine(integrante != null ? "Login exitoso" : "Login fallido");
-        return View();
-    }
 
-    public IActionResult Perfil()
-    {
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-        if (HttpContext.Session.GetString("usuario") == null) return RedirectToAction("Login");
+        [HttpPost]
+        [HttpPost]
+        public IActionResult Login(string nombreUsuario, string contraseña)
+        {
+            if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(contraseña))
+            {
+                ViewBag.error = "Por favor, complete todos los campos.";
+                return View("Index");
+            }
 
-        Integrante integrante = Objeto.StringToObject<Integrante>(HttpContext.Session.GetString("usuario"));
-        return View(integrante);
+            Integrante i = BD.Login(nombreUsuario, contraseña);
+
+            if (i == null)
+            {
+                ViewBag.error = "Usuario o contraseña incorrectos.";
+                return View("Index");
+            }
+
+            ViewBag.nombreUsuario = i.NombreUsuario;
+            ViewBag.DNI = i.DNI;
+            ViewBag.apellido = i.Apellido;
+            ViewBag.telefono = i.Telefono;
+            ViewBag.edad = i.Edad;
+            return View("Perfil");
+        }
+
+        
     }
 }
-

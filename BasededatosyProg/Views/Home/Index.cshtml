@@ -1,9 +1,11 @@
-﻿<form method="post">
-    <label>Usuario o Email</label>
-    <input type="text" name="usuario" required />
-
-    <label>Contraseña</label>
-    <input type="password" name="contrasena" required />
-
-    <button type="submit">Iniciar Sesión</button>
+﻿<form method="post" action="@Url.Action("Login", "Home")">
+    <input type="text" name="nombreUsuario" placeholder="Usuario" />
+    <input type="password" name="contraseña" placeholder="Contraseña" />
+    <button type="submit">Ingresar</button>
 </form>
+
+@if (ViewBag.error != null)
+{
+    <p style="color:red;">@ViewBag.error</p>
+}
+    

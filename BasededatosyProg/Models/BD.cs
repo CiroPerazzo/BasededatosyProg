@@ -14,33 +14,19 @@ namespace BasededatosyProg.Models
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = @"SELECT * FROM Integrante WHERE NombreUsuario = @Usuario AND Contraseña = @Contraseña";
+                string query = @"SELECT * FROM Integrante WHERE NombreUsuario = @pUsuario AND Contraseña = @pContraseña";
                 return connection.QueryFirstOrDefault<Integrante>(
                     query,
-                    new { Usuario = usuario, Contraseña = contraseña }
+                    new { pUsuario = usuario, pContraseña = contraseña }
                 );
             }
         }
-
         public List<Integrante> LevantarIntegrante()
         {
             using(SqlConnection connection = new SqlConnection(_connectionString))
             {
                 string query = "SELECT * FROM Integrante";
                 return connection.Query<Integrante>(query).ToList();
-            }
-        }
-
-        public static List<Integrante> LevantarIntegrantesPorNombre(string nombre)
-        {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
-            {
-                string storedProcedure = "TraerIntegrantesPorNombre";
-                return connection.Query<Integrante>(
-                    storedProcedure,
-                    new { Letra = nombre },
-                    commandType: System.Data.CommandType.StoredProcedure
-                ).ToList();
             }
         }
     }
