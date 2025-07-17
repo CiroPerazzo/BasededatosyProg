@@ -26,7 +26,7 @@ namespace BasededatosyProg.Controllers
         {
             if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(contraseña))
             {
-                ViewBag.error = "Por favor, complete todos los campos.";
+                ViewBag.error = "Error, campos incompletos.";
                 return View("Index");
             }
 
@@ -34,7 +34,7 @@ namespace BasededatosyProg.Controllers
 
             if (i == null)
             {
-                ViewBag.error = "Usuario o contraseña incorrectos.";
+                ViewBag.error = "Usuario o contraseña invalidos.";
                 return View("Index");
             }
 
