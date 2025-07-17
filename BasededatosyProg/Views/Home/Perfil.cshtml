@@ -1,12 +1,14 @@
-<body >
+<body>
+   <section class="perfil">
     <h1>@ViewBag.nombreUsuario</h1>
-    <section>
-        <div>            
-            <p>@ViewBag.nombreUsuario</p>
-            <p>@ViewBag.DNI</p>
-            <p>@ViewBag.apellido</p>
-            <p>@ViewBag.telefono</p>
-            <p>@ViewBag.edad</p>
+        <div>  
+        <ul>          
+            <li><strong>Usuario:</strong> @ViewBag.nombreUsuario</li>
+            <li><strong>DNI:</strong> @ViewBag.DNI</li>
+            <li><strong>Apellido: </strong>@ViewBag.apellido</li>
+            <li><strong>Télefono:</strong> @ViewBag.telefono</li>
+            <li><strong>Edad: </strong>@ViewBag.edad</li>
+        <ul>
         </div>
     </section>
 </body>
